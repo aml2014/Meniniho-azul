@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-incon" href="IPA.ico">
+  <title>Arthur Lara</title>
+
+  <style>
+    #dv1 {
+      width: 110px;
+      height: 110px;
+      background-color: rgb(0, 89, 255);
+      border: 2px solid black;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+
+    }
+
+    
+    #chão {
+      width: 100%;
+      height: 200px;
+      background-color: greenyellow;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+
+    html {
+      background-color: rgb(0, 140, 255);
+    }
+  </style>
+
+  <body>
+
+    </div>
+    <div id="chão">
+      <div id="dv1"><h1> Player1</h1></div>
+      <div id="inimigo"></div>
+    </div>
+    
+    
+  </body>
+  <script>
+
+    var px = 0;
+    var py = 0;
+
+
+
+    document.addEventListener("keydown",function(event) {
+      var obj = document.getElementById("dv1");
+      var tecla = event.keyCode
+      if(tecla == 65){
+        px-=10
+        obj.style.left = px + "px"
+      }
+      if(tecla == 68){
+        px+=10
+        obj.style.left = px + "px"
+      }
+      if(tecla == 87) {
+        py-=10
+        obj.style.top = py + "px"
+      }
+
+      if(tecla == 83) {
+        py+=10
+        obj.style.top = py + "px"
+      }
+
+
+      if(tecla == 123) {
+        alert("Posição y = " + py + "   Posição x = " + px)
+      }
+
+      if(px ==  1260) {
+        px = px - 10
+      }
+
+      if(py == 90) {
+        py = py - 10
+      }
+
+      if(py == -70) {
+        py = -60
+      }
+      if(px == 0) {
+        px = px + 10
+      }
+
+
+     
+    })
+
+    
+  </script>
+
+</html>
