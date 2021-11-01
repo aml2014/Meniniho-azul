@@ -16,9 +16,20 @@
       position: absolute;
       top: 0px;
       left: 0px;
-
-
     }
+
+
+    #dv2 {
+      width: 110px;
+      height: 110px;
+      background-color: rgb(255, 153, 0);
+      border: 2px solid black;
+      position: absolute;
+      top: 0px;
+      left: 150px;
+    }
+
+
 
     
     #chão {
@@ -41,6 +52,7 @@
     </div>
     <div id="chão">
       <div id="dv1"><h1> Player1</h1></div>
+      <div id="dv2"><h1> Player2</h1></div>
       <div id="inimigo"></div>
     </div>
     
@@ -75,15 +87,15 @@
       }
 
 
-      if(tecla == 123) {
+      if(tecla == 17) {
         alert("Posição y = " + py + "   Posição x = " + px)
       }
 
-      if(px ==  1250) {
+      if(px ==  1700) {
         px = px - 10
       }
 
-      if(py == 90) {
+      if(py == 80) {
         py = py - 10
       }
 
@@ -98,7 +110,55 @@
      
     })
 
-    
+
+    var ax = 150;
+    var ay = 0;
+
+    document.addEventListener("keydown",function(event) {
+      var dv2 = document.getElementById("dv2");
+      var tecla = event.keyCode
+
+      if(tecla == 37){
+        ax-=10
+        dv2.style.left = ax + "px"
+      }
+      if(tecla == 39){
+        ax+=10
+        dv2.style.left = ax + "px"
+      }
+      if(tecla == 38) {
+        ay-=10
+        dv2.style.top = ay + "px"
+      }
+
+      if(tecla == 40) {
+        ay+=10
+        dv2.style.top = ay + "px"
+      }
+
+
+      if(tecla == 16) {
+        alert("Posição y = " + ay + "   Posição x = " + ax)
+      }
+
+      if(ax ==  1700) {
+        ax = ax - 10
+      }
+
+      if(ay == 80) {
+        ay = ay - 10
+      }
+
+      if(ay == -70) {
+        ay = -60
+      }
+      if(ax == 0) {
+        ax = ax + 10
+      }
+
+
+     
+    })
   </script>
 
 </html>
